@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>IGCSE Past Year Paper Finder</title>
+</head>
+
+<body>
+
+    <h1>IGCSE Past Year Paper Finder</h1>
+
+    <form name="search">
+        <input type="radio" id="question-paper" name="paper-type" checked>
+        <label for="question-paper">Question Paper</label><br>
+        <input type="radio" id="mark-scheme" name="paper-type">
+        <label for="mark-scheme">Mark Scheme</label>
+        <br><br>
+        <input type="text" id="search-bar" name="paper-code" placeholder="0620/31/M/J/23">
+        <input type="submit" value="Search">
+    </form>
+
+    <p id="status-text" hidden></p>
+    <p id="error-text" class="error" hidden></p>
+
+</body>
+
+</html>
