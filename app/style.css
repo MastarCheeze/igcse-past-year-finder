@@ -1,3 +1,12 @@
+#options-panel {
+    display: flex;
+    padding-bottom: 20px;
+}
+
+#options-panel div {
+    padding-right: 75px;
+}
+
 .error {
     color: red;
 }

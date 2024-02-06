@@ -40,7 +40,16 @@ async function onSubmit() {
     clearErrorMessage();
 
     const paperCode = (document.getElementById("search-bar") as HTMLInputElement).value;
-    const paperType = (document.getElementById("question-paper") as HTMLInputElement).checked ? "qp" : "ms";
+
+    let paperType;
+    if ((document.getElementById("question-paper") as HTMLInputElement).checked) paperType = "qp";
+    else if ((document.getElementById("mark-scheme") as HTMLInputElement).checked) paperType = "ms";
+    else if ((document.getElementById("insert-paper") as HTMLInputElement).checked) paperType = "in";
+    else {
+        showErrorMessage("Please select a paper type");
+        return;
+    }
+
     const url = getApiUrl(paperCode, paperType);
 
     const res = await fetch(url);

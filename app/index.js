@@ -44,7 +44,17 @@ function onSubmit() {
     return __awaiter(this, void 0, void 0, function* () {
         clearErrorMessage();
         const paperCode = document.getElementById("search-bar").value;
-        const paperType = document.getElementById("question-paper").checked ? "qp" : "ms";
+        let paperType;
+        if (document.getElementById("question-paper").checked)
+            paperType = "qp";
+        else if (document.getElementById("mark-scheme").checked)
+            paperType = "ms";
+        else if (document.getElementById("insert-paper").checked)
+            paperType = "in";
+        else {
+            showErrorMessage("Please select a paper type");
+            return;
+        }
         const url = getApiUrl(paperCode, paperType);
         const res = yield fetch(url);
         const json = yield res.json();
